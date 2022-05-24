@@ -126,4 +126,20 @@ if ($totalRows > 0) {
 </div>
 
 <?php include __DIR__ . '/parts/scripts.php' ?>
+<script>
+    const tc = document.querySelectorAll("td i.fa-trash-can");
+    const tr = document.querySelectorAll("tbody tr");
+
+    const removeRow = function deleteData(event) {
+        console.log(tc);
+        console.log(tr);
+        console.log(this.parentNode.parentNode);
+        this.parentNode.parentNode.remove();
+    }
+
+    for (let i of tc) {
+        i.addEventListener("click", removeRow);
+    }
+
+</script>
 <?php include __DIR__ . '/parts/html-foot.php' ?>
