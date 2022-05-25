@@ -108,14 +108,14 @@ if ($totalRows > 0) {
         <tbody>
             <?php foreach ($rows as $r) : ?>
                 <tr>
-                    <td><i class="fa-solid fa-trash-can"></i></td>
+                    <td><a href="javascript:" onclick=trashCanClicked(event); reurn false;><i class="fa-solid fa-trash-can text-primary"></i></a></td>
                     <td><?= $r['sid'] ?></td>
                     <td><?= $r['name'] ?></td>
                     <td><?= $r['mobile'] ?></td>
                     <td><?= $r['email'] ?></td>
                     <td><?= $r['birthday'] ?></td>
                     <td><?= $r['address'] ?></td>
-                    <td><i class="fa-solid fa-pen-to-square"></i></td>
+                    <td><i class="fa-solid fa-pen-to-square text-primary"></i></td>
                 </tr>
             <?php endforeach; ?>
         </tbody>
@@ -127,19 +127,10 @@ if ($totalRows > 0) {
 
 <?php include __DIR__ . '/parts/scripts.php' ?>
 <script>
-    const tc = document.querySelectorAll("td i.fa-trash-can");
-    const tr = document.querySelectorAll("tbody tr");
-
-    const removeRow = function deleteData(event) {
-        console.log(tc);
-        console.log(tr);
-        console.log(this.parentNode.parentNode);
-        this.parentNode.parentNode.remove();
+    function trashCanClicked (event) {
+        const a_element = event.currentTarget;
+        const tr = a_element.closest('tr');
+        tr.remove;
     }
-
-    for (let i of tc) {
-        i.addEventListener("click", removeRow);
-    }
-
 </script>
 <?php include __DIR__ . '/parts/html-foot.php' ?>
