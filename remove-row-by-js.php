@@ -108,7 +108,7 @@ if ($totalRows > 0) {
         <tbody>
             <?php foreach ($rows as $r) : ?>
                 <tr>
-                    <td><a href="javascript:" onclick=trashCanClicked(event); reurn false;><i class="fa-solid fa-trash-can text-primary"></i></a></td>
+                    <td><a href="javascript:" onclick=trashCanClicked(event); return false;><i class="fa-solid fa-trash-can text-primary"></i></a></td>
                     <td><?= $r['sid'] ?></td>
                     <td><?= $r['name'] ?></td>
                     <td><?= $r['mobile'] ?></td>
